@@ -182,7 +182,8 @@ function submit_word(){
 		document.getElementById('error').innerHTML = err_msg;
 	}else{
 		current_track = [];//reset current_track
-		for(let i=0;i<words.length;i++){
+		var i = 0, len = words.length
+		while (i < len) {
 			if (current_word !== words[i].toUpperCase()) {
 				err_msg = "Ooops! Wrong word.";
 				document.getElementById('error').innerHTML = err_msg;
@@ -196,6 +197,7 @@ function submit_word(){
 				document.getElementById('current_word').innerHTML = current_word;
 				update_words();	break;
 			}
+			i++
 		}
 	}
 }
